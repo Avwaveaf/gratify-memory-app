@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Gratify</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
+    <string name="note_title">Note title</string>
+    <string name="memory_title">Memory title</string>
+    <string name="show_add_task_description_field">show add task description field</string>
+    <string name="your_favorite_memory">Your Favorite Memory</string>
+    <string name="discover">discover!</string>
+    <string name="add_memory_date">Add memory date</string>
+    <string name="there_is_no_memory_in_here_n_tap_icon_to_add_new_memories">There is no memory in here \n Tap \'+\' icon to add new memories</string>
+    <string name="your_memories">Your Memories</string>
+    <string name="share">Share</string>
+</resources>

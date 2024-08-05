@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="18dp"
+        tools:context=".fragments.AddMemoryFragment">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:id="@+id/edit_text_memory_title"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="@string/memory_title"
+            android:importantForAutofill="no"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@android:color/transparent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/edit_text_memory_detail"
+            android:hint="Memory details"
+            android:textSize="14sp"
+            tools:visibility="visible"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_memory_title"
+            app:layout_constraintEnd_toEndOf="@id/edit_text_memory_title"
+            android:background="@android:color/transparent"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/btn_show_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@null"
+            android:contentDescription="@string/show_add_task_description_field"
+            android:src="@drawable/baseline_playlist_add_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_text_memory_detail" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:id="@+id/btn_set_date"
+            android:src="@drawable/baseline_calendar_month_24"
+            android:background="@null"
+            android:contentDescription="@string/add_memory_date"
+            android:layout_marginStart="24dp"
+            app:layout_constraintStart_toEndOf="@id/btn_show_details"
+            app:layout_constraintTop_toTopOf="@id/btn_show_details"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cb_is_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="star this task"
+            android:button="@drawable/ic_star_selector"
+            app:layout_constraintBottom_toBottomOf="@id/btn_show_details"
+            app:layout_constraintStart_toEndOf="@id/btn_set_date"
+            app:layout_constraintTop_toTopOf="@id/btn_show_details" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save_button"
+            style="@style/ThemeOverlay.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:enabled="false"
+            app:layout_constraintBottom_toBottomOf="@id/btn_show_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_show_details" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

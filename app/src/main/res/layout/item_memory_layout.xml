@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_margin="2dp"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/text_view_memory_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/material_cb_is_favorite"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Memory titles" />
+
+            <TextView
+                android:id="@+id/text_view_memory_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/subtitle"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/text_view_memory_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/text_view_memory_title"
+                tools:text="nfsdjkfnksdjdnfkj" />
+
+            <TextView
+                android:id="@+id/text_view_memory_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/material_dynamic_neutral50"
+                android:textSize="14sp"
+                android:maxHeight="120dp"
+                app:layout_constraintEnd_toEndOf="@id/text_view_memory_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_view_memory_date"
+                tools:text="this is memory description" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/material_cb_is_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/ic_star_selector"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.HomeFragment">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="98dp"
+                app:layout_scrollFlags="scroll"
+                app:titleEnabled="false">
+
+                <!--                                <ImageView-->
+                <!--                                    android:layout_width="match_parent"-->
+                <!--                                    android:scaleType="centerCrop"-->
+                <!--                                    android:src="@drawable/gradientbgwhite"-->
+                <!--                                    android:layout_height="match_parent" />-->
+
+                <!--                <com.google.android.material.button.MaterialButton-->
+                <!--                    android:id="@+id/btn_discover"-->
+                <!--                    style="@style/ThemeOverlay.Material3.Button.TextButton"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_gravity="end|bottom"-->
+                <!--                    android:layout_margin="16dp"-->
+                <!--                    android:text="@string/discover" />-->
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/home_toolbar"
+                    style="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    app:subtitle="Capture the moment"
+                    app:subtitleTextAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_new_memory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="22dp"
+            android:src="@drawable/baseline_add_24" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="fitStart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="20dp"
+                android:id="@+id/img_no_item"
+                android:src="@drawable/emptylistbackground" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/there_is_no_memory_in_here_n_tap_icon_to_add_new_memories"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:id="@+id/tv_no_item_description"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/img_no_item" />
+
+            <TextView
+                android:id="@+id/tv_favorite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/your_favorite_memory"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/favorite_memory_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:layout_marginBottom="32dp"
+                android:paddingTop="16dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/tv_favorite" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/tv_your_memories_title"
+                android:text="@string/your_memories"
+                app:layout_constraintTop_toBottomOf="@id/favorite_memory_recycler_view"
+                android:textSize="18sp"
+                android:layout_marginTop="12dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:visibility="gone"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/main_memory_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingTop="16dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_your_memories_title"
+                tools:listitem="@layout/item_memory_layout" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
